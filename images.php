@@ -63,7 +63,7 @@ function get_the_image( $args = array() ) {
 		'the_post_thumbnail' => true, // WP 2.9+ image function
 		'size' => 'thumbnail',
 		'default_image' => 'http://staging.rmooc.ca/wp-content/uploads/2013/07/rmooc-thumb-f8.jpg',
-		'defauly_image_IDs' => array( 1079, 1080, 1081, 1082, 1083, 1084, 1085 ),  // image IDs to use for default thumbnails (horribly manually coded for rmooc)
+		'default_image_IDs' => array( 1079, 1080, 1081, 1082, 1083, 1084, 1085 ),  // image IDs to use for default thumbnails (horribly manually coded for rmooc)
 		'order_of_image' => 1,
 		'link_to_post' => true,
 		'image_class' => false,
@@ -325,16 +325,17 @@ function image_by_scan( $args = array() ) {
  * @return array
  */
 function image_by_default( $args = array() ) {
+	//  pool of attachment IDS
+	$randy_pool = $args['default_image_IDs']; 
 
-	$randy_pool = $args['defauly_image_IDs']; //  pool of attachment IDS
-	
-	$randy_attach_id = $randy_pool[ array_rand( $randy_pool ) ]; // random attachment ID from pool
-	
-	$randy_img_attribs = wp_get_attachment_image_src( $randy_attach_id ); // get image data
+	// random attachment ID from pool	
+	$randy_attach_id = $randy_pool[ array_rand( $randy_pool ) ]; 
 
-	// return thumbail size of image
+	// get image attributed
+	$randy_img_attribs = wp_get_attachment_image_src( $randy_attach_id ); 
+
+	// return URL for thumbnail size of image, this is the src attribute
 	return array( 'url' => $randy_img_attribs[0] );
-
 }
 
 /**

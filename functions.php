@@ -13,9 +13,12 @@ require_once ( get_template_directory() . '/theme-options.php' );
 require_once ( get_template_directory() .  '/images.php');
 
 // Automatic Feed Links
+// yuck turn this off
+/*
 if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support('automatic-feed-links');
 }
+*/
 
 // Add Editor Styles
 add_editor_style('editor-style.css');
@@ -241,7 +244,7 @@ if ( function_exists('register_sidebar') )
 }
 
 
-/* custom for RMOOC site bby @cogdog ---------------------- */
+/* custom for RMOOC site by @cogdog ---------------------- */
 
 add_action( 'widgets_init', 'switch_recent_posts_widget' );
 
@@ -365,17 +368,19 @@ class WP_Widget_Recent_Posts_Truncated extends WP_Widget {
 // remove p tags for category description
 remove_filter('term_description','wpautop');
 
+add_filter( 'excerpt_more', 'rmooc_excerpt_more');
+
 function rmooc_excerpt_more( $more ) {
 	return '...<div class="more-link"><a href="'. get_permalink( get_the_ID() ) . '">more &raquo;&raquo;</a></div>';
 }
 
 
-add_filter( 'excerpt_more', 'rmooc_excerpt_more');
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function custom_excerpt_length( $length ) {
 	return EXCERPT_LENGTH_WORDS;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 
 
 ?>

@@ -495,19 +495,12 @@ h6.underlined {
 }
 
 
-.thumbnailbox {
-	width:310px;
-	height:150px;
-	overflow:hidden;
-}
-
-
 .thumbnail {
 	width:310px;
-	/* height:150px; */
+	height:150px;
 	max-width:310px;
-	/* max-height:150px; */
-
+	max-height:150px;
+	overflow:hidden;
 }
 
 .smallattachment {
