@@ -1,0 +1,14 @@
+== Changelog ==
+These are the changes seen by F8 Static since it was first available for public download.
+
+= Version 4.2.3.1 (December 23, 2012) =
+	* Child theme issue fix
+
+= Version 4.2.3 (December 15, 2011) =
+	* Added Localization 
+
+= Version 4.2 =
+	* F8 Static and F8 Lite merged into one theme
+
+= Version 1.0 (August 6, 2008) =
+	* Initial release
