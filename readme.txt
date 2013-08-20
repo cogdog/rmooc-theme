@@ -1,4 +1,10 @@
-### About ###
+# About #
+This is a modification of the free F8-Lite theme from Graph Paper Press
+http://graphpaperpress.com/themes/f8-lite/
+
+that was customized by Alan Levine (@cogdog) for the rmooc.ca site, featuring feed syndication and quick posts content, plus other visual modifications.
+
+### Original Theme ###
 
 F8 Lite can transform your site or blog into a fully functioning photography or multimedia portfolio site.
 
